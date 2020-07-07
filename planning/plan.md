@@ -35,20 +35,45 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 - RWD: Game will be responsive across major device sizes
 - Blocks are turtle SVG images of varying sizes in rainbow colors
 - Turtle transitions are pleasant to behold
-- Easy mode is five turtles
-- Hard mode is seven turtles
+- Give option to play three, five, or seven turtles
 - JavaScript, HTML, and CSS files look professional and are well documented
 
 ### Gold: bells and whistles
 
+- Easy mode is three turtles
+- Medium mode is seven turtles
+- Hard mode is eight turtles (shifting from odd to even numbers of turtles changes optimum solution)
 - Game tracks a user's scores across games even if the page is reloaded
 - Game has time-based scoring option
 - Game has option to turn board upside down or its side
 - Game has option to use several types of SVG images that begin with the letter T (Tomato, Taco, Turtle, Toaster, Trumpet, Trailer, Truck)
+- Game has option to add constraints, including these:[1]
+
+      	1. No odd disk may be placed on an odd disk
+      	2. No even disk may be placed on an even disk
+      	3. There will sometimes be two possible pegs: one will have disks, and the other will be empty
+      	4. Place the disk on the non-empty peg
+      	5. Never move a disk twice in succession
 
 ## Components
 
 ### Data
+
+class Player
+
+- user: ""
+- movesCurrent: Number
+- timeCurrent: Number
+- movesHistory: Array of Numbers
+- timesHistory: Array of Numbers
+- loses OR resetsHistory: Array of Numbers
+- winsHistory: Array of Numbers
+
+class Turtle
+
+- size OR number: Number
+- AND/OR color: String
+- position:
 
 ### Presentation
 
@@ -57,3 +82,11 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 ### Style
 
 ### DOM Manipulation
+
+## Resources
+
+- Wikipedia: [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi, "Wikipedia entry for Tower of Hanoi")
+
+## Footnotes
+
+[1] Constraints from Wikipedia's [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi, "Wikipedia entry for Tower of Hanoi") entry.
