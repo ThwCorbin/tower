@@ -1,5 +1,23 @@
 # Tower of Turtles Pseudocode
 
-## Brief
+## Variables
 
-Make a tower of turtles move from one peg to another peg.
+## Classes
+
+## On page load
+
+## Game begins
+
+## Move block
+
+## Check position: ok/not
+
+## Error message: illegal move
+
+## Store position
+
+## Game over
+
+## Reset
+
+## Store results
