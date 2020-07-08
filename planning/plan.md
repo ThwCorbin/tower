@@ -10,7 +10,7 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 
 - The board has three vertical pegs of equal height spread out evenly
 - The board has five blocks, which all begin the game stacked together on one peg
-  -Each block is slightly smaller than the block immediately below it in the stack
+- Each block is slightly smaller than the block immediately below it in the stack
 - User can click on the top block on the stack, and it transitions up off of its peg
 - User can click on a different peg, and the block will transition sideways and then down onto the clicked peg
 - This is one move; this is the only way to move
@@ -64,6 +64,7 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 - turtles Array of turtle Objects
 - pegs Array of peg Objects
 - DOM elements to select
+- hasBeenClicked = null OR clicked turtle
 
 #### Class
 
@@ -73,7 +74,8 @@ class Game: bronze/silver plan
 - movesCurrent: Number
 - gameActive: Boolean
 - turtleSelected index Number
-- Method() illegal move error message
+- method() illegal move error message
+- method() select a turtle first erroe message
 
 class Game: gold plan adds
 
@@ -82,7 +84,7 @@ class Game: gold plan adds
 - matchesPlayed: Number
 - movesHistory: Array of Numbers
 - timesHistory: Array of Numbers
-- loses OR resetsHistory: Array of Numbers
+- losses OR resetsHistory: Array of Numbers
 - winsHistory: Array of Numbers
 - gameConstraintsOptions: ?? Object ??
 
