@@ -109,6 +109,7 @@ class Base
 #### Functions
 
 - Event handler
+- Create classes
 - Set up board
 - Choose number of turtles
 - Game begins

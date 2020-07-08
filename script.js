@@ -48,10 +48,13 @@ class Base {
 }
 
 // * Functions ********************
+let setUpBoard = () => {
+	console.log("set up the board dude");
+};
 
 // * Create instances of Game, Turtle, and Base
 // * Push turtle and base instances into arrays
-let setUpBoard = (numTurtles) => {
+let createClasses = (numTurtles) => {
 	let game = new Game();
 
 	for (let i = 0; i < numTurtles; i++) {
@@ -69,15 +72,13 @@ let setUpBoard = (numTurtles) => {
 		bases.push(base);
 		basePosition++;
 	}
+
+	setUpBoard();
 };
 
 let changeCount = () => console.log("This is a counter");
 // * ********************
-// * ********************
-// * ********************
-// * ********************
-// * ********************
-// * ********************
+
 // * Event listeners ********************
 counter.addEventListener("click", changeCount);
 boardBase.addEventListener("click", (e) => {
@@ -85,4 +86,4 @@ boardBase.addEventListener("click", (e) => {
 });
 
 // * Invoke on load ********************
-setUpBoard(7);
+createClasses(7);
