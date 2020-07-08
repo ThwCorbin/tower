@@ -65,6 +65,7 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 - pegs Array of peg Objects
 - DOM elements to select
 - hasBeenClicked = null OR clicked turtle
+- Silver - numTurtles
 
 #### Class
 
@@ -134,6 +135,7 @@ class Peg
 - Display current moves on counter
 - Display illegal moves message
 - Reset board and counter
+- Silver - change number of turtles 3/5 default/7
 
 ## Resources
 
