@@ -4,19 +4,23 @@
 
 ## Classes
 
+## Event Handler
+
 ## On page load
+
+## Choose number of turtles
 
 ## Game begins
 
-## Move block
+## Move turtle
 
-## Check position: ok/not
+## Check turtle position: ok/not
 
 ## Error message: illegal move
 
-## Store position
+## Store turtle position
 
-## Game over
+## Game over/winner
 
 ## Reset
 

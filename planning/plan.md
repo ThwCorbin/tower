@@ -59,21 +59,61 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 
 ### Data
 
-class Player
+#### Variables
 
-- user: ""
+- turtles Array of turtle Objects
+- pegs Array of peg Objects
+- DOM elements to select
+
+#### Class
+
+class Game: bronze/silver plan
+
+- player: String (may not be required)
 - movesCurrent: Number
+- gameActive: Boolean
+- turtleSelected index Number
+- Method() illegal move error message
+
+class Game: gold plan adds
+
 - timeCurrent: Number
+- gameOrientation: String OR Number
+- matchesPlayed: Number
 - movesHistory: Array of Numbers
 - timesHistory: Array of Numbers
 - loses OR resetsHistory: Array of Numbers
 - winsHistory: Array of Numbers
+- gameConstraintsOptions: ?? Object ??
 
-class Turtle
+class Turtle: bronze/silver
 
 - size OR number: Number
 - AND/OR color: String
-- position:
+- position: Number
+
+class Turtle: gold plan adds
+
+- shape/form of turtle(e.g. toaster)
+
+class Peg
+
+- position: Number
+- turtles: Array
+
+#### Functions
+
+- Event handler
+- On page load
+- Choose number of turtles
+- Game begins
+- Move turtle
+- Check turtle position: ok/not
+- Error message: illegal move
+- Store turtle position
+- Game over
+- Reset
+- Store results
 
 ### Presentation
 
