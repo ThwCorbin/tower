@@ -94,6 +94,7 @@ class Turtle: bronze/silver
 - size OR number: Number
 - AND/OR color: String
 - position: Number
+- topTurtle: smallest turtle : true ? false (these are initial instance values)
 
 class Turtle: gold plan adds
 
@@ -110,8 +111,8 @@ class Peg
 - On page load
 - Choose number of turtles
 - Game begins
+- Select turtle
 - Move turtle
-- Check turtle position: ok/not
 - Error message: illegal move
 - Store turtle position
 - Game over
@@ -131,7 +132,7 @@ class Peg
 
 ### DOM Manipulation
 
-- Move turtles
+- Select and move turtles
 - Display current moves on counter
 - Display illegal moves message
 - Reset board and counter

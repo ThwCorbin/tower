@@ -2,21 +2,29 @@
 
 ## Event Listeners
 
-turtles Array for each turtle => turtle add event listener
+For each turtles Array => turtle add event listener
 
-- eventHandler(clicked turtle)
+- eventHandler(".turtle")
+
+For each pegs Array => peg add event listener
+
+- eventHandler(".peg")
+
+Number of turtle => button add event listener
+
+- eventHandler(".button-num")
 
 ## Event Handler
 
 listener: turtle click
 
-1. transiton turtle element up from peg
+1. selectTurtle(clicked turtle)
 
 listener: peg click
 
-1. is turtle in play: hasBeenClicked ? continue : return with error message
+1. is turtle in play: hasBeenClicked = false ? moveTurtle() : errorMessage("illegal move")
 
-2. moveTurtle(clicked turtle)
+2. selectTurtle(clicked turtle)
 
 listener: num turtle button click - Silver
 
@@ -36,19 +44,29 @@ listener: num turtle button click - Silver
 
 - add or subtract turtles displayed on board
 
-## Game begins
+## Decision point: Game begins/continues
 
-user clicks the top turtle: event listener
+- user clicks the top turtle: event listener
 
-user clicks a peg: event listener
+- user clicks a peg: event listener
 
-## moveTurtle(clickedTurtle)
+## selectTurtle(clickedTurtle)
 
-- moveTurtle(clicked turtle)
+- update hasBeenClicked = true
+
+- transition turtle up off of its peg
+
+- ingnore clicks on any other turtle
+
+- DP: Game Continues
+
+## moveTurtle()
 
 ## Check turtle position: ok/not
 
-## Error message: illegal move
+## errorMessage(message)
+
+- "illegal move" message then DP: Game Continues
 
 ## Store turtle position
 
