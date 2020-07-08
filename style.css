@@ -1,0 +1,91 @@
+/** Variables ############### */
+:root {
+	--white: #ffffff;
+	--black: #000000;
+}
+
+/** Fonts ###############  */
+/** font-family: 'Poppins', sans-serif; */
+/** font-family: 'Lato', sans-serif; */
+/* @import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap"); */
+
+/** Reset ###############  */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/** Body & Container */
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	width: 100vw;
+	height: 100vh;
+}
+
+/** Header ############### */
+header {
+	display: flex;
+	justify-content: space-around;
+	min-width: 100%;
+	padding-top: 1em;
+}
+
+nav {
+	margin-right: 5em;
+}
+
+li {
+	list-style: none;
+}
+
+/** Main ############### */
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/** Footer ############### */
+footer {
+	display: flex;
+	justify-content: space-around;
+	min-width: 100%;
+}
+
+/** Media queries ############### */
+/** media greater >= 1440px  */
+@media all and (min-width: 1440px) {
+}
+
+/** media less than 1000px  */
+@media all and (max-width: 999px) {
+}
+
+/** media less than 768px  */
+@media all and (max-width: 767px) {
+}
+
+/** media less than 600px  */
+@media all and (max-width: 599px) {
+}
+
+/** lvfha ############### */
+a:link,
+a:visited {
+	color: var(--gray-light);
+	text-decoration: none;
+}
+
+a:focus,
+a:hover {
+	color: var(--red-rijks);
+	text-decoration: underline;
+}
+
+a:active {
+	color: var(--gray-darkest);
+	text-decoration: underline;
+}
