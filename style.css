@@ -2,6 +2,14 @@
 :root {
 	--white: #ffffff;
 	--black: #000000;
+	--brown: #d06f40;
+	--carmel: #c76331;
+	--red: red;
+	--orange: orange;
+	--yellow: yellow;
+	--green: green;
+	--indigo: indigo;
+	--violet: violet;
 }
 
 /** Fonts ###############  */
@@ -36,9 +44,11 @@ li {
 	list-style: none;
 }
 
+/** Test red borders
 * {
 	border: 0.5px dotted red;
 }
+
 /** Main ############### */
 main {
 	display: flex;
@@ -47,10 +57,16 @@ main {
 	/* justify-content: center; */
 }
 
+.grid-turtles {
+	display: grid;
+	margin-top: 10vh;
+}
+
 .turtle {
 	width: 10em;
 	height: 2em;
 	background-color: blueviolet;
+	border: 0.05em solid var(--white);
 }
 
 .board-base {
@@ -60,10 +76,17 @@ main {
 }
 
 .base {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 30vw;
 	height: 2em;
-	background-color: brown;
-	border: 0.05em solid burlywood;
+	background-color: var(--brown);
+	border: 0.05em solid var(--carmel);
+}
+
+.base > p {
+	pointer-events: none;
 }
 
 /** Footer ############### */
