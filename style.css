@@ -8,6 +8,7 @@
 	--orange: orange;
 	--yellow: yellow;
 	--green: green;
+	--blue: blue;
 	--indigo: indigo;
 	--violet: violet;
 }
@@ -63,7 +64,7 @@ main {
 }
 
 .turtle {
-	width: 10em;
+	width: 28vw;
 	height: 2em;
 	background-color: blueviolet;
 	border: 0.05em solid var(--white);
