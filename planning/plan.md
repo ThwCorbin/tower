@@ -70,12 +70,12 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 
 class Game: bronze/silver plan
 
-- player: String (may not be required)
+- player: String (may not need)
 - movesCurrent: Number
 - gameActive: Boolean
-- turtleInPlay: Boolean
+- turtleInPlay: null initially, then set to turtle object in play, then null
 - method() illegal move error message
-- method() select a turtle first erroe message
+- method() select a turtle first error message (may not need)
 
 class Game: gold plan adds
 
@@ -108,7 +108,7 @@ class Peg
 #### Functions
 
 - Event handler
-- On page load
+- Set up board
 - Choose number of turtles
 - Game begins
 - Select turtle
