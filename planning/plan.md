@@ -64,7 +64,6 @@ Make a tower of turtles for a user to move from one peg to another peg. The boar
 - turtles Array of turtle Objects
 - pegs Array of peg Objects
 - DOM elements to select
-- hasBeenClicked = null OR clicked turtle
 - Silver - numTurtles
 
 #### Class
@@ -94,7 +93,8 @@ class Turtle: bronze/silver
 - size OR number: Number
 - AND/OR color: String
 - position: Number
-- topTurtle: smallest turtle : true ? false (these are initial instance values)
+- topTurtle: smallest turtle : true ? false (these are initial instance values; this will update after each move)
+- hasBeenSelected = null OR clicked turtle (update after turtle selected)
 
 class Turtle: gold plan adds
 

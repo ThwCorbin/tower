@@ -16,17 +16,15 @@ Number of turtle => button add event listener
 
 ## Event Handler
 
-listener: turtle click
+listener: ".turtle" click
 
 1. selectTurtle(clicked turtle)
 
-listener: peg click
+listener: ".peg" click
 
-1. is turtle in play: hasBeenClicked = false ? moveTurtle() : errorMessage("illegal move")
+1. moveTurtle(clicked peg)
 
-2. selectTurtle(clicked turtle)
-
-listener: num turtle button click - Silver
+listener: ".number-of-turtles-button" click - Silver
 
 1. chooseNumTurtles()
 
@@ -46,13 +44,21 @@ listener: num turtle button click - Silver
 
 ## Decision point: Game begins/continues
 
-- user clicks the top turtle: event listener
+- user clicks a top turtle: event listener
 
-- user clicks a peg: event listener
+- then user clicks a peg: event listener
+
+- OR user clicks same turtle: event listener
 
 ## selectTurtle(clickedTurtle)
 
-- update hasBeenClicked = true
+- if hasBeenSelected = true, transition turtle back down on its current peg, then DP: Game continues
+
+- ignore clicks on turtles not on top then DP: Game continues
+
+- OR make a click on a stack of turtles the same as clicking the top turtle
+
+- update hasBeenSelected = true
 
 - transition turtle up off of its peg
 
