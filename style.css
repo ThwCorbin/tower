@@ -29,11 +29,7 @@ header {
 	display: flex;
 	justify-content: space-around;
 	min-width: 100%;
-	padding-top: 1em;
-}
-
-nav {
-	margin-right: 5em;
+	padding: 1em;
 }
 
 li {
@@ -49,11 +45,11 @@ main {
 }
 
 /** Footer ############### */
-footer {
+/* footer {
 	display: flex;
 	justify-content: space-around;
 	min-width: 100%;
-}
+} */
 
 /** Media queries ############### */
 /** media greater >= 1440px  */
