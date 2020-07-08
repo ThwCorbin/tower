@@ -1,9 +1,5 @@
 # Tower of Turtles Pseudocode
 
-## Variables
-
-## Classes
-
 ## Event Handler
 
 ## On page load
