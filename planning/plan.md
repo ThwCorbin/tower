@@ -121,7 +121,17 @@ class Peg
 
 ### Style
 
+- Board is a grid container
+- Pegs are grid items
+- Turtles are grid items
+- Move turtles up, sideways, down with grid and transitions
+
 ### DOM Manipulation
+
+- Move turtles
+- Display current moves on counter
+- Display illegal moves message
+- Reset board and counter
 
 ## Resources
 
