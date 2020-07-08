@@ -63,6 +63,7 @@ Make a tower of turtles for a user to move from one base to another base. The bo
 
 - turtles Array of turtle Objects
 - bases Array of base Objects
+- colors Array of rainbow color Strings
 - DOM elements to select
 - Silver - numTurtles
 
