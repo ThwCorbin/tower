@@ -6,9 +6,9 @@ For each turtles Array => turtle add event listener
 
 - eventHandler(".turtle")
 
-For each pegs Array => peg add event listener
+For each bases Array => base add event listener
 
-- eventHandler(".peg")
+- eventHandler(".base")
 
 Number of turtle => button add event listener
 
@@ -20,9 +20,9 @@ listener: ".turtle" click
 
 1. selectTurtle(clickedTurtle)
 
-listener: ".peg" click
+listener: ".base" click
 
-1. moveTurtle(clickedPeg)
+1. moveTurtle(clickedBase)
 
 listener: ".number-of-turtles-button" click - Silver
 
@@ -30,9 +30,9 @@ listener: ".number-of-turtles-button" click - Silver
 
 ## setUpBoard()
 
-- create instances of game, turtle - 5 default, and pegs - 3
+- create instances of game, turtle - 5 default, and bases - 3
 
-- push turtle and peg instances into arrays
+- push turtle and base instances into arrays
 
 ## chooseNumTurtles() - Silver plan
 
@@ -46,13 +46,13 @@ listener: ".number-of-turtles-button" click - Silver
 
 - user clicks a top turtle: event listener
 
-- then user clicks a peg: event listener
+- then user clicks a base: event listener
 
 - OR user clicks same turtle: event listener
 
 ## selectTurtle(clickedTurtle)
 
-- if turtle.hasBeenSelected = true, transition turtle back down on its current peg, then DP: Game continues
+- if turtle.hasBeenSelected = true, transition turtle back down on its current base, then DP: Game continues
 
 - note: game.turtleInPlay is an Object -> use type coercion for true/false below
 
@@ -64,7 +64,7 @@ listener: ".number-of-turtles-button" click - Silver
 
 - if turtle.hasBeenSelected === false, and game.turtleInPlay == false, and turtle.topTurtle === true:
 
-  1.  transition turtle up off of its peg
+  1.  transition turtle up off of its base
 
   2.  update turtle.hasBeenSelected = true
 
@@ -72,41 +72,41 @@ listener: ".number-of-turtles-button" click - Silver
 
 - then DP: Game continues
 
-## moveTurtle(clickedPeg)
+## moveTurtle(clickedBase)
 
 - note: game.turtleInPlay is an Object -> use type coercion for true/false below
 
 - if game.turtleInPlay == false, return then DP: Game continues
 
-- OR make a click on a peg (with at least one turtle) the same as clicking the top turtle, then return
+- OR make a click on a base (with at least one turtle) the same as clicking the top turtle, then return
 
-- else if turtle is larger the the top turtle on clickedPeg
+- else if turtle is larger the the top turtle on clickedBase
 
       	1. errorMessage("illegal move")
 
       	2. then return
 
-- else DOM transition the turtle sideways and down on to clickedPeg
+- else DOM transition the turtle sideways and down on to clickedBase
 
-- then remove turtle from previous peg Array
+- then remove turtle from previous base Array
 
-- then add turtle to current peg Array
+- then add turtle to current base Array
 
-- then updateTopTurtles(clickedPeg)
+- then updateTopTurtles(clickedBase)
 
 - then call stack returns and DP: Game continues
 
-## updateTopTurtles(clickedPeg)
+## updateTopTurtles(clickedBase)
 
-- after moveTurtle(), update what the top turtle is on each peg
+- after moveTurtle(), update what the top turtle is on each base
 
-- note: the last turtle in each peg.turtles Array is a top turtle
+- note: the last turtle in each base.turtles Array is a top turtle
 
-- check if one peg has all the turtles: if yes, gameOver(), then return
+- check if one base has all the turtles: if yes, gameOver(), then return
 
-- else if peg.turtles.length is true, set each peg.turtles[length-1].topTurtle = true, else continue...
+- else if base.turtles.length is true, set each base.turtles[length-1].topTurtle = true, else continue...
 
-- then set clickedPeg's turtle that is 2nd from Array end to false, peg.turtles[length - 2] = false
+- then set clickedBase's turtle that is 2nd from Array end to false, base.turtles[length - 2] = false
 
 - call stack returns to moveTurtle()
 
@@ -128,9 +128,9 @@ listener: ".number-of-turtles-button" click - Silver
 
 - set turtles.length = 0 (deletes array elements)
 
-- set pegs.length = 0 (deletes array elements)
+- set bases.length = 0 (deletes array elements)
 
-- setUpBoard() to initiate new instances of Game, Turtle, and Peg
+- setUpBoard() to initiate new instances of Game, Turtle, and Base
 
 ## Store results - Gold plan
 

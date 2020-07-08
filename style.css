@@ -44,32 +44,26 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-}
-
-.board {
-	display: flex;
-	justify-content: space-around;
-	width: 80%;
-	margin-top: 20vh;
-}
-
-.peg-p {
-	width: 1em;
-	height: 20em;
-	background-color: burlywood;
-}
-
-.board-base {
-	width: 80%;
-	height: 2em;
-	background-color: burlywood;
+	/* justify-content: center; */
 }
 
 .turtle {
-	width: 5em;
+	width: 10em;
 	height: 2em;
 	background-color: blueviolet;
+}
+
+.board-base {
+	display: flex;
+	justify-content: center;
+	width: 90vw;
+}
+
+.base {
+	width: 30vw;
+	height: 2em;
+	background-color: brown;
+	border: 0.05em solid burlywood;
 }
 
 /** Footer ############### */
