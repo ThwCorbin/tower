@@ -73,7 +73,7 @@ class Game: bronze/silver plan
 - player: String (may not be required)
 - movesCurrent: Number
 - gameActive: Boolean
-- turtleSelected index Number
+- turtleInPlay: Boolean
 - method() illegal move error message
 - method() select a turtle first erroe message
 
@@ -94,7 +94,7 @@ class Turtle: bronze/silver
 - AND/OR color: String
 - position: Number
 - topTurtle: smallest turtle : true ? false (these are initial instance values; this will update after each move)
-- hasBeenSelected = null OR clicked turtle (update after turtle selected)
+- hasBeenSelected = Boolean
 
 class Turtle: gold plan adds
 
@@ -113,6 +113,7 @@ class Peg
 - Game begins
 - Select turtle
 - Move turtle
+- Update top turtles on pegs
 - Error message: illegal move
 - Store turtle position
 - Game over
