@@ -13,7 +13,10 @@
 	--blue: blue;
 	--indigo: indigo;
 	--violet: violet;
-	--highlight: #f5f59d;
+	/* --highlight: #f5f59d; */
+	--highlight: silver;
+	--gold: gold;
+	--silver: silver;
 }
 
 /** Fonts ###############  */
@@ -80,8 +83,8 @@ main {
 
 .grid-turtles {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	width: 90vw;
 	margin-top: 10vh;
 }
@@ -95,50 +98,50 @@ main {
 .turtle-0 {
 	width: 16vw;
 	background-color: var(--violet);
-	grid-column: 1;
 	grid-row: 1;
+	grid-column: 1;
 }
 
 .turtle-1 {
 	width: 18vw;
 	background-color: var(--indigo);
-	grid-column: 1;
 	grid-row: 2;
+	grid-column: 1;
 }
 
 .turtle-2 {
 	width: 20vw;
 	background-color: var(--blue);
-	grid-column: 1;
 	grid-row: 3;
+	grid-column: 1;
 }
 
 .turtle-3 {
 	width: 22vw;
 	background-color: var(--green);
-	grid-column: 1;
 	grid-row: 4;
+	grid-column: 1;
 }
 
 .turtle-4 {
 	width: 24vw;
 	background-color: var(--yellow);
-	grid-column: 1;
 	grid-row: 5;
+	grid-column: 1;
 }
 
 .turtle-5 {
 	width: 26vw;
 	background-color: var(--orange);
-	grid-column: 1;
 	grid-row: 6;
+	grid-column: 1;
 }
 
 .turtle-6 {
 	width: 28vw;
 	background-color: var(--red);
-	grid-column: 1;
 	grid-row: 7;
+	grid-column: 1;
 }
 
 .board-base {
@@ -152,7 +155,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	width: 30vw;
-	height: 2.5em;
+	height: 4vh;
 	background-color: var(--brown);
 	border: 0.05em solid var(--carmel);
 }

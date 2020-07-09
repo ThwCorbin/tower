@@ -7,7 +7,6 @@ let basesArr = [];
 let sizeTurtle = 14; // turtlesArr[n].size: 16, 18, 20, 22, 24, 26, 28
 let rowInitial = 1; // turtlesArr[n].gridRow: 1,2,3,4,5,6,7
 let basePosition = 0; // baseArr[n].position: 0,1,2
-// let boardBase = document.querySelector(".board-base");
 let bases = document.querySelectorAll(".base");
 let message = document.querySelector(".message");
 let counter = document.querySelector(".move-counter");
@@ -19,6 +18,7 @@ class Game {
 		this.movesCurrent = 0;
 		this.gameActive = false;
 		this.turtleInPlay = false;
+		this.turtleInDOM = "";
 	}
 	illegalMove() {
 		console.log("Illegal move");
@@ -46,10 +46,33 @@ class Base {
 
 let moveTurtle = (e) => {
 	let base = e.target;
-	let idx = base.classList[1].slice(5); // base-n length-1 = 5
-	console.log(base, idx);
+	let column = base.classList[1].slice(5); // base-n length-1 = 5
+	let idx = column - 1;
+	let idxPrevBase = game.turtleInPlay.gridColumn - 1;
+	let turtlesOnBase = basesArr[idx].turtles.length;
 
-	console.log(basesArr[idx]);
+	// * if no turtle has been selected, return
+	if (!game.turtleInPlay) {
+		return;
+		// * if the base does not have any turtles on it
+	} else if (!basesArr[idx].turtles.length) {
+		// * move the selected turtle to this base
+		game.turtleInDOM.style.gridColumn = column;
+		game.turtleInDOM.style.gridRow = 7;
+		// * update the turtle object
+		game.turtleInPlay.gridColumn = Number(column);
+		game.turtleInPlay.gradRow = 7;
+		// * remove border highlight
+		game.turtleInDOM.style.border = `0.05em solid var(--white)`;
+		// * remove turtle from previous base Array and add to new base Array
+		basesArr[idx].turtles.push(basesArr[idxPrevBase].turtles.shift());
+		// todo: then updateTopTurtles(clickedBase)
+		// * reset variables
+		game.turtleInPlay = false;
+		game.turtleInDOM = "";
+	} else {
+		console.log("move turtle did not work");
+	}
 };
 
 let selectTurtle = (e) => {
@@ -71,9 +94,10 @@ let selectTurtle = (e) => {
 	} else {
 		// * highlight turtle border
 		console.log(turtle);
-		turtle.style.border = ".5em solid var(--highlight)";
+		turtle.style.border = `.25em solid var(--highlight)`;
 		turtlesArr[idx].hasBeenSelected = true;
 		game.turtleInPlay = turtlesArr[idx];
+		game.turtleInDOM = turtle;
 	}
 };
 
@@ -120,13 +144,24 @@ turtles.forEach((turtle) => turtle.addEventListener("click", selectTurtle));
 
 bases.forEach((base) => base.addEventListener("click", moveTurtle));
 
-// boardBase.addEventListener("click", (e) => {
-// 	console.log(e.target);
-// });
-
 counter.addEventListener("click", changeCount);
 
+let turtle1 = document.querySelector(".turtle-1");
+
+let moveThisTurtle = () => {
+	turtle1.style.grid["grid-column"] = "2/3";
+};
 // * Obsolete code...probably ********************
+
+// let transX = idx === 0 ? idx : idx * 30;
+// let transY =
+// 	turtlesOnBase === 0
+// 		? 2 * turtleObj.yMultiple
+// 		: 2 * (turtleObj.yMultiple - turtlesOnBase);
+// game.turtleInDOM.style.transform = `translate(${transX}vw, ${transY}em)`;
+
+// let yStart = 6;
+// this.yMultiple = yStart--;
 
 // let colors = [
 // 	"--red",
