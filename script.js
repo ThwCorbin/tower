@@ -48,6 +48,7 @@ checkForWin = () => {
 	if (basesArr[1].turtles.length === 7 || basesArr[2].turtles.length === 7) {
 		console.log("Winner !!!!");
 		// todo: winner message & reset button to play agains
+		game.gameActive = false;
 	} else {
 		return;
 	}
@@ -71,26 +72,30 @@ let moveTurtle = (e) => {
 		// * update the turtle object
 		game.turtleInPlay.gridColumn = Number(column);
 		game.turtleInPlay.gradRow = 7;
-		// * remove border highlight
-		game.turtleInDOM.style.border = `0.05em solid var(--white)`;
 		// * remove turtle from previous base Array and add to new base Array
 		basesArr[idx].turtles.push(basesArr[idxPrevBase].turtles.shift());
 		// * set the next turtle in the previous base as a top turtle
 		if (basesArr[idxPrevBase].turtles[0])
 			basesArr[idxPrevBase].turtles[0].topTurtle = true;
+		// * remove border highlight
+		game.turtleInDOM.style.border = `0.05em solid var(--white)`;
+		// * Update counter
+		counter.textContent++;
 		// * reset variables
+		game.turtleInPlay.hasBeenSelected = false;
 		game.turtleInPlay = false;
 		game.turtleInDOM = "";
 		checkForWin();
 	} else {
 		console.log("move turtle did not work");
-
+		// turlesOnBase
 		// todo: set the clickedBase's turtle that is 2nd from the top to topTurtle = false
 		checkForWin();
 	}
 };
 
 let selectTurtle = (e) => {
+	if (!game.gameActive) return;
 	let turtle = e.target;
 	let idx = turtle.classList[1].slice(7); // turtle-n length-1 = 7
 
@@ -122,6 +127,8 @@ let setUpBoard = () => {
 		string += `<div class="turtle turtle-${i}"}></div>`;
 	}
 	turtleGrid.innerHTML = string;
+
+	game.gameActive = true;
 };
 
 // * Create instances of Game, Turtle, and Base
