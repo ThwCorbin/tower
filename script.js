@@ -63,6 +63,7 @@ let moveTurtle = (e) => {
 
 	// * if no turtle has been selected, return
 	if (!game.turtleInPlay) {
+		// todo: add message to pick a turtle to move first
 		return;
 		// * if the base does not have any turtles on it
 	} else if (!basesArr[idx].turtles.length) {
@@ -86,9 +87,15 @@ let moveTurtle = (e) => {
 		game.turtleInPlay = false;
 		game.turtleInDOM = "";
 		checkForWin();
+		// * Check if selected turtle is larger than the turtle on the new base
+	} else if (game.turtleInPlay.size > basesArr[idx].turtles[0].size) {
+		// todo: error message - This turtle is too big
+		console.log("This turtle is too big");
 	} else {
-		console.log("move turtle did not work");
-		// turlesOnBase
+		// * move the selected turtle to this base
+		game.turtleInDOM.style.gridColumn = column;
+		game.turtleInDOM.style.gridRow = 7 - turtlesOnBase;
+
 		// todo: set the clickedBase's turtle that is 2nd from the top to topTurtle = false
 		checkForWin();
 	}
