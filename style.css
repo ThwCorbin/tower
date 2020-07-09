@@ -1,6 +1,8 @@
 /** Variables ############### */
 :root {
 	--white: #ffffff;
+	--white_off: #f0f8ff;
+	--gray: #788ea1;
 	--black: #000000;
 	--brown: #d06f40;
 	--carmel: #c76331;
@@ -56,6 +58,24 @@ main {
 	flex-direction: column;
 	align-items: center;
 	/* justify-content: center; */
+}
+
+.message {
+	width: 30vw;
+	text-align: center;
+	color: var(--violet);
+	background-color: var(--white_off);
+	padding: 0.5em;
+	margin-bottom: 1em;
+}
+
+.moves {
+	color: var(--gray);
+}
+
+.move-counter {
+	margin-left: 0.5em;
+	color: var(--indigo);
 }
 
 .grid-turtles {

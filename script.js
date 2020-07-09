@@ -7,7 +7,9 @@ let basesArr = [];
 let sizeTurtle = 14; // turtlesArr[n].size: 16, 18, 20, 22, 24, 26, 28
 let rowInitial = 1; // turtlesArr[n].gridRow: 1,2,3,4,5,6,7
 let basePosition = 0; // baseArr[n].position: 0,1,2
-let boardBase = document.querySelector(".board-base");
+// let boardBase = document.querySelector(".board-base");
+let bases = document.querySelectorAll(".base");
+let message = document.querySelector(".message");
 let counter = document.querySelector(".move-counter");
 let turtleGrid = document.querySelector(".grid-turtles");
 
@@ -42,10 +44,17 @@ class Base {
 
 // * Functions ********************
 
-// let moveTurtle = (g)
+let moveTurtle = (e) => {
+	let base = e.target;
+	let idx = base.classList[1].slice(5); // base-n length-1 = 5
+	console.log(base, idx);
 
-let selectTurtle = (turtle) => {
-	let idx = turtle.classList[1].slice(7); // turtle-n length = 7
+	console.log(basesArr[idx]);
+};
+
+let selectTurtle = (e) => {
+	let turtle = e.target;
+	let idx = turtle.classList[1].slice(7); // turtle-n length-1 = 7
 
 	// * if this turtle has already been selected
 	if (turtlesArr[idx].hasBeenSelected === true) {
@@ -107,15 +116,13 @@ createClasses(7);
 
 // * turtles must be declared after creating class Turtle
 let turtles = document.querySelectorAll(".turtle");
-turtles.forEach((turtle) => {
-	turtle.addEventListener("click", (e) => {
-		selectTurtle(e.target);
-	});
-});
+turtles.forEach((turtle) => turtle.addEventListener("click", selectTurtle));
 
-boardBase.addEventListener("click", (e) => {
-	console.log(e.target);
-});
+bases.forEach((base) => base.addEventListener("click", moveTurtle));
+
+// boardBase.addEventListener("click", (e) => {
+// 	console.log(e.target);
+// });
 
 counter.addEventListener("click", changeCount);
 

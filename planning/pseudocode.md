@@ -54,7 +54,7 @@ listener: ".number-of-turtles-button" click - Silver
 
 - if turtle.hasBeenSelected = true, transition turtle back down on its current base, then DP: Game continues
 
-- note: game.turtleInPlay is an Object -> use type coercion for true/false below
+- ~~note: game.turtleInPlay is an Object -> use type coercion for true/false below~~ use !game.turtleInPlay as coercion does not work
 
 - if turtle.hasBeenSelected === false, and game.turtleInPlay == true, ingnore clicks on any other turtle
 
@@ -74,7 +74,7 @@ listener: ".number-of-turtles-button" click - Silver
 
 ## moveTurtle(clickedBase)
 
-- note: game.turtleInPlay is an Object -> use type coercion for true/false below
+- ~~note: game.turtleInPlay is an Object -> use type coercion for true/false below~~ use !game.turtleInPlay as coercion does not work
 
 - if game.turtleInPlay == false, return then DP: Game continues
 
