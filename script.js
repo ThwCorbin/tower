@@ -4,17 +4,6 @@ console.log("hiya");
 let turtlesArr = [];
 let basesArr = [];
 let sizes = ["16", "18", "20", "22", "24", "26", "28"];
-// let colors = [
-// 	"--red",
-// 	"--orange",
-// 	"--yellow",
-// 	"--green",
-// 	"--blue",
-// 	"--indigo",
-// 	"--violet",
-// ];
-// let sizes = ["28", "26", "24", "22", "20", "18", "16"];
-// let turtleStartPosition = 6;
 let basePosition = 0;
 let boardBase = document.querySelector(".board-base");
 let counter = document.querySelector(".move-counter");
@@ -36,12 +25,9 @@ class Turtle {
 	constructor() {
 		this.color = null;
 		this.size = null;
-		this.position = null;
+		this.column = null;
+		this.row = null;
 		this.hasBeenSelected = false;
-		// this.color = colors[0];
-		// this.size = sizes[0];
-		// this.position = turtleStartPosition;
-		// this.topTurtle = this.size === "16" ? true : false;
 	}
 }
 
@@ -53,6 +39,10 @@ class Base {
 }
 
 // * Functions ********************
+
+let selectTurtle = (turtle) => {
+	console.log(turtle.classList[1]);
+};
 
 // * Update DOM with turtles
 let setUpBoard = () => {
@@ -71,11 +61,6 @@ let createClasses = (numTurtles) => {
 	for (let i = 0; i < numTurtles; i++) {
 		let turtle = new Turtle();
 		turtlesArr.push(turtle);
-
-		// * Prepare for next iteration
-		// colors.shift();
-		// sizes.shift();
-		// turtleStartPosition--;
 	}
 
 	for (let i = 0; i < 3; i++) {
@@ -100,7 +85,7 @@ createClasses(7);
 let turtles = document.querySelectorAll(".turtle");
 turtles.forEach((turtle) => {
 	turtle.addEventListener("click", (e) => {
-		console.log(e.target);
+		selectTurtle(e.target);
 	});
 });
 
@@ -109,3 +94,27 @@ boardBase.addEventListener("click", (e) => {
 });
 
 counter.addEventListener("click", changeCount);
+
+// * Obsolete code...probably ********************
+
+// let colors = [
+// 	"--red",
+// 	"--orange",
+// 	"--yellow",
+// 	"--green",
+// 	"--blue",
+// 	"--indigo",
+// 	"--violet",
+// ];
+// let sizes = ["28", "26", "24", "22", "20", "18", "16"];
+// let turtleStartPosition = 6;
+
+// this.color = colors[0];
+// this.size = sizes[0];
+// this.position = turtleStartPosition;
+// this.topTurtle = this.size === "16" ? true : false;
+
+// // Prepare for next iteration
+// colors.shift();
+// sizes.shift();
+// turtleStartPosition--;
