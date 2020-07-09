@@ -41,13 +41,12 @@ header {
 	padding: 1em;
 }
 
-li {
-	list-style: none;
+h1 {
+	color: var(--green);
 }
 
-/** Test red borders
-* {
-	border: 0.5px dotted red;
+li {
+	list-style: none;
 }
 
 /** Main ############### */
@@ -60,14 +59,65 @@ main {
 
 .grid-turtles {
 	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	width: 90vw;
 	margin-top: 10vh;
 }
 
 .turtle {
-	width: 28vw;
 	height: 2em;
-	background-color: blueviolet;
 	border: 0.05em solid var(--white);
+	justify-self: center;
+}
+
+.turtle1 {
+	width: 16vw;
+	background-color: var(--violet);
+	grid-column: 1/2;
+	grid-row: 1/2;
+}
+
+.turtle2 {
+	width: 18vw;
+	background-color: var(--indigo);
+	grid-column: 1/2;
+	grid-row: 2/3;
+}
+
+.turtle3 {
+	width: 20vw;
+	background-color: var(--blue);
+	grid-column: 1/2;
+	grid-row: 3/4;
+}
+
+.turtle4 {
+	width: 22vw;
+	background-color: var(--green);
+	grid-column: 1/2;
+	grid-row: 4/5;
+}
+
+.turtle5 {
+	width: 24vw;
+	background-color: var(--yellow);
+	grid-column: 1/2;
+	grid-row: 5/6;
+}
+
+.turtle6 {
+	width: 26vw;
+	background-color: var(--orange);
+	grid-column: 1/2;
+	grid-row: 6/7;
+}
+
+.turtle7 {
+	width: 28vw;
+	background-color: var(--red);
+	grid-column: 1/2;
+	grid-row: 7/8;
 }
 
 .board-base {
@@ -81,12 +131,13 @@ main {
 	justify-content: center;
 	align-items: center;
 	width: 30vw;
-	height: 2em;
+	height: 2.5em;
 	background-color: var(--brown);
 	border: 0.05em solid var(--carmel);
 }
 
 .base > p {
+	color: var(--white);
 	pointer-events: none;
 }
 

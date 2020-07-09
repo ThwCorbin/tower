@@ -12,11 +12,13 @@ let colors = [
 	"--indigo",
 	"--violet",
 ];
-let sizes = ["28", "26", "24", "22", "20", "18", "16"];
-let turtleStartPosition = 6;
+let sizes = ["16vw", "18vw", "20vw", "22vw", "24vw", "26vw", "28vw"];
+// let sizes = ["28", "26", "24", "22", "20", "18", "16"];
+// let turtleStartPosition = 6;
 let basePosition = 0;
 let boardBase = document.querySelector(".board-base");
 let counter = document.querySelector(".move-counter");
+let turtleGrid = document.querySelector(".grid-turtles");
 
 // * Classes ********************
 class Game {
@@ -32,11 +34,14 @@ class Game {
 
 class Turtle {
 	constructor() {
-		this.color = colors[0];
-		this.size = sizes[0];
-		this.position = turtleStartPosition;
+		this.color = null;
+		this.size = null;
+		this.position = null;
 		this.hasBeenSelected = false;
-		this.topTurtle = this.size === "16" ? true : false;
+		// this.color = colors[0];
+		// this.size = sizes[0];
+		// this.position = turtleStartPosition;
+		// this.topTurtle = this.size === "16" ? true : false;
 	}
 }
 
@@ -48,8 +53,14 @@ class Base {
 }
 
 // * Functions ********************
+
+// * Update DOM with turtles
 let setUpBoard = () => {
-	console.log("set up the board dude");
+	let string = "";
+	for (let i = 1; i <= turtles.length; i++) {
+		string += `<div class="turtle turtle${i}"}></div>`;
+	}
+	turtleGrid.innerHTML = string;
 };
 
 // * Create instances of Game, Turtle, and Base
@@ -62,14 +73,16 @@ let createClasses = (numTurtles) => {
 		turtles.push(turtle);
 
 		// * Prepare for next iteration
-		colors.shift();
-		sizes.shift();
-		turtleStartPosition--;
+		// colors.shift();
+		// sizes.shift();
+		// turtleStartPosition--;
 	}
 
 	for (let i = 0; i < 3; i++) {
 		let base = new Base();
 		bases.push(base);
+
+		// * Prepare for next iteration
 		basePosition++;
 	}
 
