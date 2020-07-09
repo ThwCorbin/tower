@@ -3,8 +3,9 @@ console.log("hiya");
 // * Variables ********************
 let turtlesArr = [];
 let basesArr = [];
-let sizes = ["16", "18", "20", "22", "24", "26", "28"];
-let basePosition = 0;
+let sizeTurtle = 14; // turtlesArr[n].size: 16, 18, 20, 22, 24, 26, 28
+let rowInitial = 1; // turtlesArr[n].gridRow: 1,2,3,4,5,6,7
+let basePosition = 0; // baseArr[n].position: 0,1,2
 let boardBase = document.querySelector(".board-base");
 let counter = document.querySelector(".move-counter");
 let turtleGrid = document.querySelector(".grid-turtles");
@@ -23,10 +24,9 @@ class Game {
 
 class Turtle {
 	constructor() {
-		this.color = null;
-		this.size = null;
-		this.column = null;
-		this.row = null;
+		this.size = sizeTurtle += 2;
+		this.gridColumn = 1;
+		this.gridRow = rowInitial++;
 		this.hasBeenSelected = false;
 	}
 }
@@ -106,6 +106,8 @@ counter.addEventListener("click", changeCount);
 // 	"--indigo",
 // 	"--violet",
 // ];
+
+// let sizes = ["16", "18", "20", "22", "24", "26", "28"];
 // let sizes = ["28", "26", "24", "22", "20", "18", "16"];
 // let turtleStartPosition = 6;
 
