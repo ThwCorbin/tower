@@ -1,6 +1,7 @@
 console.log("hiya");
 
 // * Variables ********************
+let game;
 let turtlesArr = [];
 let basesArr = [];
 let sizeTurtle = 14; // turtlesArr[n].size: 16, 18, 20, 22, 24, 26, 28
@@ -28,6 +29,7 @@ class Turtle {
 		this.gridColumn = 1;
 		this.gridRow = rowInitial++;
 		this.hasBeenSelected = false;
+		this.topTurtle = this.size === 16 ? true : false;
 	}
 }
 
@@ -40,8 +42,30 @@ class Base {
 
 // * Functions ********************
 
+// let moveTurtle = (g)
+
 let selectTurtle = (turtle) => {
-	console.log(turtle.classList[1]);
+	let idx = turtle.classList[1].slice(7); // turtle-n length = 7
+
+	// * if this turtle has already been selected
+	if (turtlesArr[idx].hasBeenSelected === true) {
+		// todo: unselect turtle
+		console.log("Turtle already selected");
+		// * if this turtle is not a top turtle
+	} else if (!turtlesArr[idx].topTurtle) {
+		// * ignore clicks on a turtle that is not on top of a stack
+		return;
+		// * if there is already another turtle selected
+	} else if (game.turtleInPlay) {
+		// todo: ignore or let player know that fact
+		console.log("Another turtle has already been selected");
+	} else {
+		// * highlight turtle border
+		console.log(turtle);
+		turtle.style.border = ".5em solid var(--highlight)";
+		turtlesArr[idx].hasBeenSelected = true;
+		game.turtleInPlay = turtlesArr[idx];
+	}
 };
 
 // * Update DOM with turtles
@@ -56,7 +80,7 @@ let setUpBoard = () => {
 // * Create instances of Game, Turtle, and Base
 // * Push turtle and base instances into arrays
 let createClasses = (numTurtles) => {
-	let game = new Game();
+	game = new Game();
 
 	for (let i = 0; i < numTurtles; i++) {
 		let turtle = new Turtle();
