@@ -1,18 +1,18 @@
 console.log("hiya");
 
 // * Variables ********************
-let turtles = [];
-let bases = [];
-let colors = [
-	"--red",
-	"--orange",
-	"--yellow",
-	"--green",
-	"--blue",
-	"--indigo",
-	"--violet",
-];
-let sizes = ["16vw", "18vw", "20vw", "22vw", "24vw", "26vw", "28vw"];
+let turtlesArr = [];
+let basesArr = [];
+let sizes = ["16", "18", "20", "22", "24", "26", "28"];
+// let colors = [
+// 	"--red",
+// 	"--orange",
+// 	"--yellow",
+// 	"--green",
+// 	"--blue",
+// 	"--indigo",
+// 	"--violet",
+// ];
 // let sizes = ["28", "26", "24", "22", "20", "18", "16"];
 // let turtleStartPosition = 6;
 let basePosition = 0;
@@ -48,7 +48,7 @@ class Turtle {
 class Base {
 	constructor() {
 		this.position = basePosition;
-		this.turtles = this.position === 0 ? [...turtles] : [];
+		this.turtles = this.position === 0 ? [...turtlesArr] : [];
 	}
 }
 
@@ -57,8 +57,8 @@ class Base {
 // * Update DOM with turtles
 let setUpBoard = () => {
 	let string = "";
-	for (let i = 1; i <= turtles.length; i++) {
-		string += `<div class="turtle turtle${i}"}></div>`;
+	for (let i = 0; i < turtlesArr.length; i++) {
+		string += `<div class="turtle turtle-${i}"}></div>`;
 	}
 	turtleGrid.innerHTML = string;
 };
@@ -70,7 +70,7 @@ let createClasses = (numTurtles) => {
 
 	for (let i = 0; i < numTurtles; i++) {
 		let turtle = new Turtle();
-		turtles.push(turtle);
+		turtlesArr.push(turtle);
 
 		// * Prepare for next iteration
 		// colors.shift();
@@ -80,7 +80,7 @@ let createClasses = (numTurtles) => {
 
 	for (let i = 0; i < 3; i++) {
 		let base = new Base();
-		bases.push(base);
+		basesArr.push(base);
 
 		// * Prepare for next iteration
 		basePosition++;
@@ -90,13 +90,22 @@ let createClasses = (numTurtles) => {
 };
 
 let changeCount = () => console.log("This is a counter");
-// * ********************
+
+// * Invoke on load ********************
+createClasses(7);
 
 // * Event listeners ********************
-counter.addEventListener("click", changeCount);
+
+// * turtles must be declared after creating class Turtle
+let turtles = document.querySelectorAll(".turtle");
+turtles.forEach((turtle) => {
+	turtle.addEventListener("click", (e) => {
+		console.log(e.target);
+	});
+});
+
 boardBase.addEventListener("click", (e) => {
 	console.log(e.target);
 });
 
-// * Invoke on load ********************
-createClasses(7);
+counter.addEventListener("click", changeCount);
