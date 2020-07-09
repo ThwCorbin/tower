@@ -2,6 +2,7 @@
 :root {
 	--white: #ffffff;
 	--white_off: #f0f8ff;
+	--silver: silver;
 	--gray: #788ea1;
 	--black: #000000;
 	--brown: #d06f40;
@@ -13,10 +14,7 @@
 	--blue: blue;
 	--indigo: indigo;
 	--violet: violet;
-	/* --highlight: #f5f59d; */
 	--highlight: silver;
-	--gold: gold;
-	--silver: silver;
 }
 
 /** Fonts ###############  */
@@ -156,8 +154,8 @@ main {
 	align-items: center;
 	width: 30vw;
 	height: 4vh;
-	background-color: var(--brown);
-	border: 0.05em solid var(--carmel);
+	background-color: var(--gray);
+	border: 0.05em solid var(--silver);
 }
 
 .base > p {
