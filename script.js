@@ -44,6 +44,15 @@ class Base {
 
 // * Functions ********************
 
+checkForWin = () => {
+	if (basesArr[1].turtles.length === 7 || basesArr[2].turtles.length === 7) {
+		console.log("Winner !!!!");
+		// todo: winner message & reset button to play agains
+	} else {
+		return;
+	}
+};
+
 let moveTurtle = (e) => {
 	let base = e.target;
 	let column = base.classList[1].slice(5); // base-n length-1 = 5
@@ -66,12 +75,18 @@ let moveTurtle = (e) => {
 		game.turtleInDOM.style.border = `0.05em solid var(--white)`;
 		// * remove turtle from previous base Array and add to new base Array
 		basesArr[idx].turtles.push(basesArr[idxPrevBase].turtles.shift());
-		// todo: then updateTopTurtles(clickedBase)
+		// * set the next turtle in the previous base as a top turtle
+		if (basesArr[idxPrevBase].turtles[0])
+			basesArr[idxPrevBase].turtles[0].topTurtle = true;
 		// * reset variables
 		game.turtleInPlay = false;
 		game.turtleInDOM = "";
+		checkForWin();
 	} else {
 		console.log("move turtle did not work");
+
+		// todo: set the clickedBase's turtle that is 2nd from the top to topTurtle = false
+		checkForWin();
 	}
 };
 
@@ -93,7 +108,6 @@ let selectTurtle = (e) => {
 		console.log("Another turtle has already been selected");
 	} else {
 		// * highlight turtle border
-		console.log(turtle);
 		turtle.style.border = `.25em solid var(--highlight)`;
 		turtlesArr[idx].hasBeenSelected = true;
 		game.turtleInPlay = turtlesArr[idx];

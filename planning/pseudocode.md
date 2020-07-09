@@ -100,13 +100,13 @@ listener: ".number-of-turtles-button" click - Silver
 
 - after moveTurtle(), update what the top turtle is on each base
 
-- note: the last turtle in each base.turtles Array is a top turtle
+- note: the ~~last~~ first turtle in each base.turtles Array is a top turtle
 
-- check if one base has all the turtles: if yes, gameOver(), then return
+- check if ~~one~~ the second or third base ~~has~~ have all the turtles: if yes, gameOver(), then return
 
-- else if base.turtles.length is true, set each base.turtles[length-1].topTurtle = true, else continue...
+- else if base.turtles.length is true, set each base.turtles ~~[length-1]~~[0].topTurtle = true, else continue...
 
-- then set clickedBase's turtle that is 2nd from Array end to false, base.turtles[length - 2] = false
+- then set clickedBase's turtle that is 2nd from ~~Array end~~ the top to false, base.turtles~~[length - 2]~~[0] = false
 
 - call stack returns to moveTurtle()
 
