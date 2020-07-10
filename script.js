@@ -7,7 +7,8 @@ let rowInitial = 1; // turtlesArr[n].gridRow: 1,2,3,4,5,6,7
 let colors = ["violet", "indigo", "blue", "green", "yellow", "orange", "red"];
 let idxColors = 0;
 let basePosition = 0; // baseArr[n].position: 0,1,2
-// ! turtles querySelectorAll declared before event listener
+// ! set turtles value after creating instances of class Turtle
+let turtles;
 let bases = document.querySelectorAll(".base");
 let message = document.querySelector(".message");
 let counter = document.querySelector(".move-counter");
@@ -66,8 +67,9 @@ let reset = () => {
 	rowInitial = 1;
 	idxColors = 0;
 	basePosition = 0;
+	counter.textContent = "0";
 
-	setUpBoard();
+	createClasses();
 };
 
 let checkForWin = () => {
@@ -220,7 +222,7 @@ let createClasses = () => {
 		// * Prepare for next iteration
 		basePosition++;
 	}
-
+	document.querySelectorAll(".turtle");
 	setUpBoard();
 };
 
@@ -231,8 +233,8 @@ createClasses();
 
 // * Event listeners ********************
 
-// ! turtles must be declared after creating instances of class Turtle
-let turtles = document.querySelectorAll(".turtle");
+// ! turtles declared, but we set value after creating Turtle instances
+turtles = document.querySelectorAll(".turtle");
 turtles.forEach((turtle) => turtle.addEventListener("click", selectTurtle));
 
 bases.forEach((base) => base.addEventListener("click", moveTurtle));
