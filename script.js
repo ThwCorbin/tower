@@ -70,6 +70,9 @@ let reset = () => {
 	counter.textContent = "0";
 
 	createClasses();
+	// * reset value to new instances of class Turtle; then add event listener
+	turtles = document.querySelectorAll(".turtle");
+	turtles.forEach((turtle) => turtle.addEventListener("click", selectTurtle));
 };
 
 let checkForWin = () => {
@@ -221,7 +224,7 @@ let createClasses = () => {
 		// * Prepare for next iteration
 		basePosition++;
 	}
-	document.querySelectorAll(".turtle");
+
 	setUpBoard();
 };
 
@@ -230,7 +233,7 @@ createClasses();
 
 // * Event listeners ********************
 
-// ! turtles declared, but we set value after creating Turtle instances
+// ! turtles declared at top, but we set value after creating Turtle instances
 turtles = document.querySelectorAll(".turtle");
 turtles.forEach((turtle) => turtle.addEventListener("click", selectTurtle));
 
