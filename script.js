@@ -197,7 +197,7 @@ let selectTurtle = (e) => {
 let setUpBoard = () => {
 	let string = "";
 	for (let i = 0; i < turtlesArr.length; i++) {
-		string += `<div class="turtle turtle-${i}"}><img max-height="3em" src="sea-turtle.svg" alt="A turtle swimming" /></div>`;
+		string += `<div class="turtle turtle-${i}"}></div>`;
 	}
 	turtleGrid.innerHTML = string;
 	game.displayMessage(
