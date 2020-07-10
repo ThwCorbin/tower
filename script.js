@@ -4,6 +4,8 @@ let turtlesArr = [];
 let basesArr = [];
 let sizeTurtle = 14; // turtlesArr[n].size: 16, 18, 20, 22, 24, 26, 28
 let rowInitial = 1; // turtlesArr[n].gridRow: 1,2,3,4,5,6,7
+let colors = ["violet", "indigo", "blue", "green", "yellow", "orange", "red"];
+let idxColors = 0;
 let basePosition = 0; // baseArr[n].position: 0,1,2
 let bases = document.querySelectorAll(".base");
 let message = document.querySelector(".message");
@@ -22,19 +24,20 @@ class Game {
 		message.textContent = msg;
 		window.setTimeout(function () {
 			if (playAgain) {
-				message.textContent = `Hit reset to play again`;
+				message.textContent = `Hit reset to play again!`;
 				return;
 			}
 			message.textContent = `Restack the turtles on base two or three to win`;
-		}, 3000);
+		}, 5000);
 	}
 }
 
 class Turtle {
 	constructor() {
 		this.size = sizeTurtle += 2;
-		this.gridColumn = 1;
 		this.gridRow = rowInitial++;
+		this.gridColumn = 1;
+		this.color = colors[idxColors++];
 		this.hasBeenSelected = false;
 		this.topTurtle = this.size === 16 ? true : false;
 		this.idxTurtle = null;
@@ -69,8 +72,7 @@ let moveTurtle = (e) => {
 
 	// * if no turtle has been selected, return
 	if (!game.turtleInPlay) {
-		// todo: add message to pick a turtle to move first
-		game.displayMessage(`Pick a turtle first`);
+		game.displayMessage(`Pick a turtle first before selecting a base!`);
 		return;
 		// * if the base is the same (coercion) as the selected turtle
 	} else if (column == turtlesArr[game.idxTurtle].gridColumn) {
@@ -104,8 +106,10 @@ let moveTurtle = (e) => {
 		checkForWin();
 		// * Check if selected turtle is larger than the turtle on the new base
 	} else if (game.turtleInPlay.size > basesArr[idx].turtles[0].size) {
-		// todo: error message - This turtle is too big
 		console.log("This turtle is too big");
+		game.displayMessage(
+			`The ${game.turtleInPlay.color} turtle is too big for the ${basesArr[idx].turtles[0].color} turtle`
+		);
 	} else {
 		// * move the selected turtle to this base
 		game.turtleInDOM.style.gridColumn = column;
@@ -148,16 +152,17 @@ let selectTurtle = (e) => {
 		game.turtleInPlay = false;
 		game.turtleInDOM = "";
 		// * if this turtle is not a top turtle
-	} else if (!turtlesArr[idx].topTurtle) {
-		// * ignore clicks on a turtle that is not on top of a stack
+	} else if (game.turtleInPlay) {
 		game.displayMessage(
-			`That turtle is not on top of its stack; select a different turtle`
+			`The ${game.turtleInPlay.color} turtle has already been selected!`
+		);
+		return;
+	} else if (!turtlesArr[idx].topTurtle) {
+		game.displayMessage(
+			`The ${turtlesArr[idx].color} turtle is not on the top of its stack!`
 		);
 		return;
 		// * if there is already another turtle selected
-	} else if (game.turtleInPlay) {
-		game.displayMessage(`Another turtle has already been selected`);
-		return;
 	} else {
 		// * highlight turtle border
 		turtle.style.border = `.25em solid var(--highlight)`;
@@ -176,7 +181,7 @@ let setUpBoard = () => {
 	}
 	turtleGrid.innerHTML = string;
 	game.displayMessage(
-		`Ready to play!!  Select the top turtle in the stack to begin!`
+		`Ready to play!  Select the top turtle in the stack to begin!`
 	);
 	game.gameActive = true;
 };
