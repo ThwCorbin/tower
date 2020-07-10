@@ -49,20 +49,16 @@ h1 {
 	color: var(--green);
 }
 
-li {
-	list-style: none;
-}
-
 /** Main ############### */
 main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-content: center; */
 }
 
 .message {
 	width: 30vw;
+	height: 7vw;
 	text-align: center;
 	color: var(--violet);
 	background-color: var(--white_off);
@@ -163,12 +159,20 @@ main {
 	pointer-events: none;
 }
 
-/** Footer ############### */
-/* footer {
-	display: flex;
-	justify-content: space-around;
-	min-width: 100%;
-} */
+.directions {
+	margin-top: 5em;
+	color: var(--violet);
+}
+
+ul {
+	margin-top: 0.5em;
+}
+
+li {
+	list-style-type: circle;
+	list-style-position: inside;
+	color: var(--gray);
+}
 
 /** Media queries ############### */
 /** media greater >= 1440px  */
