@@ -7,10 +7,15 @@ let rowInitial = 1; // turtlesArr[n].gridRow: 1,2,3,4,5,6,7
 let colors = ["violet", "indigo", "blue", "green", "yellow", "orange", "red"];
 let idxColors = 0;
 let basePosition = 0; // baseArr[n].position: 0,1,2
+// ! turtles querySelectorAll declared before event listener
 let bases = document.querySelectorAll(".base");
 let message = document.querySelector(".message");
 let counter = document.querySelector(".move-counter");
 let turtleGrid = document.querySelector(".grid-turtles");
+
+// todo: consider adding "Are you sure?" option to reset
+// todo: add turtle svgs to replace color blocks
+// todo: media querries small and large devices
 
 // * Classes ********************
 class Game {
@@ -53,11 +58,21 @@ class Base {
 
 // * Functions ********************
 
-checkForWin = () => {
+let reset = () => {
+	turtlesArr.length = 0;
+	basesArr.length = 0;
+	sizeTurtle = 14;
+	rowInitial = 1;
+	idxColors = 0;
+	basePosition = 0;
+
+	setUpBoard();
+};
+
+let checkForWin = () => {
 	if (basesArr[1].turtles.length === 7 || basesArr[2].turtles.length === 7) {
 		game.gameActive = false;
 		game.displayMessage("Player Wins!!!", true);
-		// todo: reset button to play agains
 	} else {
 		return;
 	}
@@ -188,7 +203,8 @@ let setUpBoard = () => {
 
 // * Create instances of Game, Turtle, and Base
 // * Push turtle and base instances into arrays
-let createClasses = (numTurtles) => {
+let createClasses = () => {
+	let numTurtles = 7;
 	game = new Game();
 
 	for (let i = 0; i < numTurtles; i++) {
@@ -210,11 +226,11 @@ let createClasses = (numTurtles) => {
 let changeCount = () => console.log("This is a counter");
 
 // * Invoke on load ********************
-createClasses(7);
+createClasses();
 
 // * Event listeners ********************
 
-// * turtles must be declared after creating class Turtle
+// ! turtles must be declared after creating instances of class Turtle
 let turtles = document.querySelectorAll(".turtle");
 turtles.forEach((turtle) => turtle.addEventListener("click", selectTurtle));
 
@@ -227,3 +243,13 @@ let turtle1 = document.querySelector(".turtle-1");
 let moveThisTurtle = () => {
 	turtle1.style.grid["grid-column"] = "2/3";
 };
+
+// * Consider
+// todo: consider adding "Are you sure?" option to reset
+// add this.areYouSure = false to Game class
+// if (game.gameActive && !game.areYouSure) {
+// game.displayMessage(`Are you sure you want to reset? Hit reset again.`)
+// code
+// } else if (!gameActive) {
+// code
+//	}
