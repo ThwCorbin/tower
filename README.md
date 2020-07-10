@@ -22,7 +22,7 @@ This game is my fourth project for [General Assembly's](https://generalassemb.ly
 
 ## Features
 
-I developed a bronze/silver/gold plan, which is available in the [planning](/planning/, "Link to planning directory) directory in this repo. I completed all bronze level and some silver level features. I still need to replace the colored element blocks with SVG turtles and make the game responsive on devices smaller than 768px and larger than 1200px. I designed the game based on an iPad's dimensions. I did not attempt any gold level features, and I do not plan to do so. I updated the planning docs as needed to aid understanding, but there are differences between the features in the current game, particularly in the components section of the plan document and the functions in the pseudocode document.
+I developed a bronze/silver/gold plan, which is available in the planning directory in this repo. I completed all bronze level and some silver level features. I still need to replace the colored element blocks with SVG turtles and make the game responsive on devices smaller than 768px and larger than 1200px. I designed the game based on an iPad's dimensions. I did not attempt any gold level features, and I do not plan to do so. I revised my plan on several occasions to provide a better end product for a user. I updated the planning documents as needed to aid understanding, but there are differences between these documents and the features in the current game.
 
 ## Installation
 
