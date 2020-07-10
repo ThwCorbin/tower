@@ -1,5 +1,3 @@
-console.log("hiya");
-
 // * Variables ********************
 let game;
 let turtlesArr = [];
@@ -32,6 +30,7 @@ class Turtle {
 		this.gridRow = rowInitial++;
 		this.hasBeenSelected = false;
 		this.topTurtle = this.size === 16 ? true : false;
+		this.idxTurtle = null;
 	}
 }
 
@@ -56,7 +55,7 @@ checkForWin = () => {
 
 let moveTurtle = (e) => {
 	let base = e.target;
-	let column = base.classList[1].slice(5); // base-n length-1 = 5
+	let column = base.classList[1].slice(5); // base-n length - 1 = 5
 	let idx = column - 1;
 	let idxPrevBase = game.turtleInPlay.gridColumn - 1;
 	let turtlesOnBase = basesArr[idx].turtles.length;
@@ -65,6 +64,13 @@ let moveTurtle = (e) => {
 	if (!game.turtleInPlay) {
 		// todo: add message to pick a turtle to move first
 		return;
+		// * if the base is the same (coercion) as the selected turtle
+	} else if (column == turtlesArr[game.idxTurtle].gridColumn) {
+		// * unselect turtle
+		game.turtleInDOM.style.border = `0.05em solid var(--white)`;
+		game.hasBeenSelected = false;
+		game.turtleInPlay = false;
+		game.turtleInDOM = "";
 		// * if the base does not have any turtles on it
 	} else if (!basesArr[idx].turtles.length) {
 		// * move the selected turtle to this base
@@ -74,18 +80,19 @@ let moveTurtle = (e) => {
 		game.turtleInPlay.gridColumn = Number(column);
 		game.turtleInPlay.gradRow = 7;
 		// * remove turtle from previous base Array and add to new base Array
-		basesArr[idx].turtles.push(basesArr[idxPrevBase].turtles.shift());
+		basesArr[idx].turtles.unshift(basesArr[idxPrevBase].turtles.shift());
 		// * set the next turtle in the previous base as a top turtle
-		if (basesArr[idxPrevBase].turtles[0])
+		if (basesArr[idxPrevBase].turtles[0]) {
 			basesArr[idxPrevBase].turtles[0].topTurtle = true;
+		}
 		// * remove border highlight
 		game.turtleInDOM.style.border = `0.05em solid var(--white)`;
-		// * Update counter
-		counter.textContent++;
 		// * reset variables
 		game.turtleInPlay.hasBeenSelected = false;
 		game.turtleInPlay = false;
 		game.turtleInDOM = "";
+		// * Update counter
+		counter.textContent++;
 		checkForWin();
 		// * Check if selected turtle is larger than the turtle on the new base
 	} else if (game.turtleInPlay.size > basesArr[idx].turtles[0].size) {
@@ -95,8 +102,27 @@ let moveTurtle = (e) => {
 		// * move the selected turtle to this base
 		game.turtleInDOM.style.gridColumn = column;
 		game.turtleInDOM.style.gridRow = 7 - turtlesOnBase;
-
-		// todo: set the clickedBase's turtle that is 2nd from the top to topTurtle = false
+		// * update the turtle object
+		game.turtleInPlay.gridColumn = Number(column);
+		game.turtleInPlay.gradRow = 7 - turtlesOnBase;
+		// * remove turtle from previous base Array and add to new base Array
+		basesArr[idx].turtles.unshift(basesArr[idxPrevBase].turtles.shift());
+		// * set topTurtle = false for the turtle that is 2nd
+		if (basesArr[idx].turtles[1]) {
+			basesArr[idx].turtles[1].topTurtle = false;
+		}
+		// * set the next turtle in the previous base as a top turtle
+		if (basesArr[idxPrevBase].turtles[0]) {
+			basesArr[idxPrevBase].turtles[0].topTurtle = true;
+		}
+		// * remove border highlight
+		game.turtleInDOM.style.border = `0.05em solid var(--white)`;
+		// * reset variables
+		game.turtleInPlay.hasBeenSelected = false;
+		game.turtleInPlay = false;
+		game.turtleInDOM = "";
+		// * Update counter
+		counter.textContent++;
 		checkForWin();
 	}
 };
@@ -108,11 +134,15 @@ let selectTurtle = (e) => {
 
 	// * if this turtle has already been selected
 	if (turtlesArr[idx].hasBeenSelected === true) {
-		// todo: unselect turtle
-		console.log("Turtle already selected");
+		// * unselect turtle
+		turtle.style.border = `0.05em solid var(--white)`;
+		turtlesArr[idx].hasBeenSelected = false;
+		game.turtleInPlay = false;
+		game.turtleInDOM = "";
 		// * if this turtle is not a top turtle
 	} else if (!turtlesArr[idx].topTurtle) {
 		// * ignore clicks on a turtle that is not on top of a stack
+		console.log("not top turtle");
 		return;
 		// * if there is already another turtle selected
 	} else if (game.turtleInPlay) {
@@ -124,6 +154,7 @@ let selectTurtle = (e) => {
 		turtlesArr[idx].hasBeenSelected = true;
 		game.turtleInPlay = turtlesArr[idx];
 		game.turtleInDOM = turtle;
+		game.idxTurtle = idx;
 	}
 };
 
