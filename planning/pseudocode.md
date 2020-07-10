@@ -30,17 +30,19 @@ listener: ".number-of-turtles-button" click - Silver
 
 ## setUpBoard()
 
-- create instances of game, turtle - 5 default, and bases - 3
+- create instances of game, turtle - 7 ~~5 default~~, and bases - 3
 
 - push turtle and base instances into arrays
 
-## chooseNumTurtles() - Silver plan
+~~## chooseNumTurtles() - Silver plan~~
 
-- User clicks button to cycle through options: event listener
+- Decided to use 7 turtles as default (rainbow colors)
 
-- update number of turtles variable: 3/5/7
+- ~~User clicks button to cycle through options: event listener~~
 
-- add or subtract turtles displayed on board
+- ~~update number of turtles variable: 3/5/7~~
+
+- ~~add or subtract turtles displayed on board~~
 
 ## Decision point: Game begins/continues
 
@@ -92,15 +94,17 @@ listener: ".number-of-turtles-button" click - Silver
 
 - then add turtle to current base Array
 
-- then updateTopTurtles(clickedBase)
+- ~~then updateTopTurtles(clickedBase)~~
 
 - then call stack returns and DP: Game continues
 
-## updateTopTurtles(clickedBase)
+~~## updateTopTurtles(clickedBase)~~
+
+- I moved kept the following inside of moveTurtle(): consider moving these items out into a separate function
 
 - after moveTurtle(), update what the top turtle is on each base
 
-- note: the ~~last~~ first turtle in each base.turtles Array is a top turtle
+- note: the ~~last~~ first turtle in each base.turtles Array[0] is a top turtle
 
 - check if ~~one~~ the second or third base ~~has~~ have all the turtles: if yes, gameOver(), then return
 
@@ -110,7 +114,9 @@ listener: ".number-of-turtles-button" click - Silver
 
 - call stack returns to moveTurtle()
 
-## errorMessage(message)
+~~## errorMessage(message)~~
+
+- I moved message handling to Game class as a displayMessage method
 
 - "illegal move" message then DP: Game Continues
 
