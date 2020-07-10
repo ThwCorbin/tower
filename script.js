@@ -11,6 +11,7 @@ let basePosition = 0; // baseArr[n].position: 0,1,2
 let bases = document.querySelectorAll(".base");
 let message = document.querySelector(".message");
 let counter = document.querySelector(".move-counter");
+let resetBtn = document.querySelector(".reset-btn");
 let turtleGrid = document.querySelector(".grid-turtles");
 
 // todo: consider adding "Are you sure?" option to reset
@@ -238,11 +239,7 @@ bases.forEach((base) => base.addEventListener("click", moveTurtle));
 
 counter.addEventListener("click", changeCount);
 
-let turtle1 = document.querySelector(".turtle-1");
-
-let moveThisTurtle = () => {
-	turtle1.style.grid["grid-column"] = "2/3";
-};
+resetBtn.addEventListener("click", reset);
 
 // * Consider
 // todo: consider adding "Are you sure?" option to reset
