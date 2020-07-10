@@ -84,9 +84,17 @@ main {
 }
 
 .turtle {
-	height: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3em;
 	border: 0.05em solid var(--white);
 	justify-self: center;
+}
+
+img {
+	max-height: 2.5em;
+	pointer-events: none;
 }
 
 .turtle-0 {

@@ -15,9 +15,9 @@ let counter = document.querySelector(".move-counter");
 let resetBtn = document.querySelector(".reset-btn");
 let turtleGrid = document.querySelector(".grid-turtles");
 
-// todo: consider adding "Are you sure?" option to reset
 // todo: add turtle svgs to replace color blocks
 // todo: media querries small and large devices
+// todo: consider adding "Are you sure?" option to reset
 
 // * Classes ********************
 class Game {
@@ -197,7 +197,7 @@ let selectTurtle = (e) => {
 let setUpBoard = () => {
 	let string = "";
 	for (let i = 0; i < turtlesArr.length; i++) {
-		string += `<div class="turtle turtle-${i}"}></div>`;
+		string += `<div class="turtle turtle-${i}"}><img src="sea-turtle.svg" alt="A turtle swimming" /></div>`;
 	}
 	turtleGrid.innerHTML = string;
 	game.displayMessage(
