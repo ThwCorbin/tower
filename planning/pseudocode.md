@@ -124,6 +124,8 @@ listener: ".number-of-turtles-button" click - Silver
 
 - develop if there is a gold plan
 
+- Ed. There's not.
+
 ## gameOver()
 
 - display a winner's message
