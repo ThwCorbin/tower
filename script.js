@@ -124,7 +124,6 @@ let moveTurtle = (e) => {
 		checkForWin();
 		// * Check if selected turtle is larger than the turtle on the new base
 	} else if (game.turtleInPlay.size > basesArr[idx].turtles[0].size) {
-		console.log("This turtle is too big");
 		game.displayMessage(
 			`The ${game.turtleInPlay.color} turtle is too big for the ${basesArr[idx].turtles[0].color} turtle`
 		);
@@ -225,8 +224,6 @@ let createClasses = () => {
 	document.querySelectorAll(".turtle");
 	setUpBoard();
 };
-
-let changeCount = () => console.log("This is a counter");
 
 // * Invoke on load ********************
 createClasses();
