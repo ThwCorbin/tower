@@ -236,8 +236,6 @@ turtles.forEach((turtle) => turtle.addEventListener("click", selectTurtle));
 
 bases.forEach((base) => base.addEventListener("click", moveTurtle));
 
-counter.addEventListener("click", changeCount);
-
 resetBtn.addEventListener("click", reset);
 
 // * Consider
