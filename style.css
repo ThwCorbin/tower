@@ -7,13 +7,13 @@
 	--black: #000000;
 	--brown: #d06f40;
 	--carmel: #c76331;
-	--red: red;
-	--orange: orange;
-	--yellow: yellow;
-	--green: green;
-	--blue: blue;
-	--indigo: indigo;
-	--violet: violet;
+	--red: #ff0000;
+	--orange: #ffa500;
+	--yellow: #ffff00;
+	--green: #008000;
+	--blue: #0000ff;
+	--indigo: #4b0082;
+	--violet: #ee81ee;
 	--highlight: silver;
 }
 
@@ -33,15 +33,15 @@
 body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	/* height: 100vh; */
 }
 
 /** Header ############### */
 header {
 	display: flex;
 	justify-content: space-around;
-	min-width: 100%;
+	width: 100%;
 	padding: 1em;
 }
 
@@ -57,8 +57,8 @@ main {
 }
 
 .message {
-	width: 30vw;
-	height: 7vw;
+	width: 10rem;
+	height: auto;
 	text-align: center;
 	color: var(--violet);
 	background-color: var(--white_off);
@@ -79,69 +79,130 @@ main {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	width: 90vw;
-	margin-top: 10vh;
+	max-width: 90vw;
+	margin-top: 1rem;
 }
 
 .turtle {
-	height: 2em;
-	border: 0.05em solid var(--white);
 	justify-self: center;
 }
 
 .turtle-0 {
 	width: 16vw;
-	background-color: var(--violet);
+	height: auto;
 	grid-row: 1;
 	grid-column: 1;
+	background-color: var(--violet);
+	background-image: url(./noun_turtle_1189418.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
+/* .turtle-0 > svg > g > path {
+	fill: var(--violet);
+} */
 
 .turtle-1 {
 	width: 18vw;
-	background-color: var(--indigo);
+	height: auto;
 	grid-row: 2;
 	grid-column: 1;
+	background-color: var(--indigo);
+	background-image: url(./noun_turtle_1189418.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
+/* .turtle-1 > svg > g > path {
+	fill: var(--indigo);
+} */
 
 .turtle-2 {
 	width: 20vw;
-	background-color: var(--blue);
+	height: auto;
 	grid-row: 3;
 	grid-column: 1;
+	background-color: var(--blue);
+	background-image: url(./noun_turtle_1189418.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
+/* .turtle-2 > svg > g > path {
+	fill: var(--blue);
+} */
 
 .turtle-3 {
 	width: 22vw;
-	background-color: var(--green);
+	height: auto;
 	grid-row: 4;
 	grid-column: 1;
+	background-color: var(--green);
+	background-image: url(./noun_turtle_1189418.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
+/* .turtle-3 > svg > g > path {
+	fill: var(--green);
+} */
 
 .turtle-4 {
 	width: 24vw;
-	background-color: var(--yellow);
+	height: auto;
 	grid-row: 5;
 	grid-column: 1;
+	background-color: var(--yellow);
+	background-image: url(./noun_turtle_1189418.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
+/* .turtle-4 > svg > g > path {
+	fill: var(--yellow);
+} */
 
 .turtle-5 {
 	width: 26vw;
-	background-color: var(--orange);
+	height: auto;
 	grid-row: 6;
 	grid-column: 1;
+	background-color: var(--orange);
+	background-image: url(./noun_turtle_1189418.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
+/* .turtle-5 > svg > g > path {
+	fill: var(--orange);
+} */
 
 .turtle-6 {
 	width: 28vw;
-	background-color: var(--red);
+	height: 14vw;
 	grid-row: 7;
 	grid-column: 1;
+	background-color: var(--red);
+	background-image: url(./noun_turtle_1189418.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
+/* .turtle-6 > svg > g > path {
+	fill: var(--red);
+} */
 
 .board-base {
 	display: flex;
 	justify-content: center;
-	width: 90vw;
+	max-width: 90vw;
 }
 
 .base {
@@ -184,9 +245,9 @@ li {
 	border-radius: 8%;
 }
 
-.turtleImg {
+/* .turtleImg {
 	margin-top: 3em;
-}
+} */
 
 /** lvfha ############### */
 /* a:link,
