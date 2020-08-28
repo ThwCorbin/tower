@@ -17,11 +17,6 @@
 	--highlight: silver;
 }
 
-/** Fonts ###############  */
-/** font-family: 'Poppins', sans-serif; */
-/** font-family: 'Lato', sans-serif; */
-/* @import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap"); */
-
 /** Reset ###############  */
 * {
 	box-sizing: border-box;
@@ -34,7 +29,6 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	width: 100%;
-	/* height: 100vh; */
 }
 
 /** Header ############### */
@@ -57,7 +51,7 @@ main {
 }
 
 .message {
-	width: 10rem;
+	width: 15rem;
 	height: auto;
 	text-align: center;
 	color: var(--violet);
@@ -79,7 +73,7 @@ main {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	max-width: 90vw;
+	max-width: 90%;
 	margin-top: 1rem;
 }
 
@@ -88,7 +82,7 @@ main {
 }
 
 .turtle-0 {
-	width: 16vw;
+	width: 14vw;
 	height: auto;
 	grid-row: 1;
 	grid-column: 1;
@@ -99,12 +93,8 @@ main {
 	background-position: center;
 }
 
-/* .turtle-0 > svg > g > path {
-	fill: var(--violet);
-} */
-
 .turtle-1 {
-	width: 18vw;
+	width: 16vw;
 	height: auto;
 	grid-row: 2;
 	grid-column: 1;
@@ -115,12 +105,8 @@ main {
 	background-position: center;
 }
 
-/* .turtle-1 > svg > g > path {
-	fill: var(--indigo);
-} */
-
 .turtle-2 {
-	width: 20vw;
+	width: 18vw;
 	height: auto;
 	grid-row: 3;
 	grid-column: 1;
@@ -131,12 +117,8 @@ main {
 	background-position: center;
 }
 
-/* .turtle-2 > svg > g > path {
-	fill: var(--blue);
-} */
-
 .turtle-3 {
-	width: 22vw;
+	width: 20vw;
 	height: auto;
 	grid-row: 4;
 	grid-column: 1;
@@ -147,12 +129,8 @@ main {
 	background-position: center;
 }
 
-/* .turtle-3 > svg > g > path {
-	fill: var(--green);
-} */
-
 .turtle-4 {
-	width: 24vw;
+	width: 22vw;
 	height: auto;
 	grid-row: 5;
 	grid-column: 1;
@@ -163,12 +141,8 @@ main {
 	background-position: center;
 }
 
-/* .turtle-4 > svg > g > path {
-	fill: var(--yellow);
-} */
-
 .turtle-5 {
-	width: 26vw;
+	width: 24vw;
 	height: auto;
 	grid-row: 6;
 	grid-column: 1;
@@ -179,12 +153,8 @@ main {
 	background-position: center;
 }
 
-/* .turtle-5 > svg > g > path {
-	fill: var(--orange);
-} */
-
 .turtle-6 {
-	width: 28vw;
+	width: 26vw;
 	height: 14vw;
 	grid-row: 7;
 	grid-column: 1;
@@ -195,22 +165,18 @@ main {
 	background-position: center;
 }
 
-/* .turtle-6 > svg > g > path {
-	fill: var(--red);
-} */
-
 .board-base {
 	display: flex;
 	justify-content: center;
-	max-width: 90vw;
+	max-width: 75rem;
 }
 
 .base {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 30vw;
-	height: 4vh;
+	width: 25rem;
+	height: 2rem;
 	background-color: var(--gray);
 	border: 0.05em solid var(--silver);
 }
@@ -221,7 +187,7 @@ main {
 }
 
 .directions {
-	margin-top: 5em;
+	margin-top: 1em;
 	color: var(--violet);
 }
 
@@ -245,17 +211,7 @@ li {
 	border-radius: 8%;
 }
 
-/* .turtleImg {
-	margin-top: 3em;
-} */
-
 /** lvfha ############### */
-/* a:link,
-a:visited {
-	color: var(--gray-light);
-	text-decoration: none;
-} */
-
 button:focus,
 button:hover {
 	color: var(--violet);
