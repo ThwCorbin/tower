@@ -73,17 +73,19 @@ main {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	max-width: 90%;
+	/* max-width: 90%; */
 	margin-top: 1rem;
 }
 
 .turtle {
 	justify-self: center;
+	align-self: flex-end;
+	box-sizing: content-box;
 }
 
 .turtle-0 {
-	width: 12rem;
-	height: auto;
+	width: 5rem;
+	height: 2.5rem;
 	grid-row: 1;
 	grid-column: 1;
 	background-color: var(--violet);
@@ -94,8 +96,8 @@ main {
 }
 
 .turtle-1 {
-	width: 13rem;
-	height: auto;
+	width: 6rem;
+	height: 3rem;
 	grid-row: 2;
 	grid-column: 1;
 	background-color: var(--indigo);
@@ -106,8 +108,8 @@ main {
 }
 
 .turtle-2 {
-	width: 14rem;
-	height: auto;
+	width: 7rem;
+	height: 3.5rem;
 	grid-row: 3;
 	grid-column: 1;
 	background-color: var(--blue);
@@ -118,8 +120,8 @@ main {
 }
 
 .turtle-3 {
-	width: 15rem;
-	height: auto;
+	width: 8rem;
+	height: 4rem;
 	grid-row: 4;
 	grid-column: 1;
 	background-color: var(--green);
@@ -130,8 +132,8 @@ main {
 }
 
 .turtle-4 {
-	width: 16rem;
-	height: auto;
+	width: 9rem;
+	height: 4.5rem;
 	grid-row: 5;
 	grid-column: 1;
 	background-color: var(--yellow);
@@ -142,8 +144,8 @@ main {
 }
 
 .turtle-5 {
-	width: 17rem;
-	height: auto;
+	width: 10rem;
+	height: 5rem;
 	grid-row: 6;
 	grid-column: 1;
 	background-color: var(--orange);
@@ -154,8 +156,8 @@ main {
 }
 
 .turtle-6 {
-	width: 18rem;
-	height: 14vw;
+	width: 11rem;
+	height: 5.5rem;
 	grid-row: 7;
 	grid-column: 1;
 	background-color: var(--red);
@@ -168,14 +170,14 @@ main {
 .board-base {
 	display: flex;
 	justify-content: center;
-	max-width: 54rem;
+	max-width: 33rem;
 }
 
 .base {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 18rem;
+	width: 11rem;
 	height: 2rem;
 	background-color: var(--gray);
 	border: 0.05em solid var(--silver);
