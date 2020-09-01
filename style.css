@@ -36,7 +36,7 @@ header {
 	display: flex;
 	justify-content: space-around;
 	width: 100%;
-	padding: 1em;
+	padding: 0.5em;
 }
 
 h1 {
@@ -57,7 +57,7 @@ main {
 	color: var(--violet);
 	background-color: var(--white_off);
 	padding: 0.5em;
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 }
 
 .moves {
@@ -73,7 +73,7 @@ main {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	margin-top: 1rem;
+	/* margin-top: 1rem; */
 }
 
 .turtle {
