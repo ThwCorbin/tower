@@ -10,8 +10,8 @@
 	--red: #ff0000;
 	--orange: #ffa500;
 	--yellow: #ffff00;
-	--green: #008000;
-	--blue: #0000ff;
+	--green: #4eee4e;
+	--blue: #4b4bf1;
 	--indigo: #4b0082;
 	--violet: #ee81ee;
 	--highlight: silver;
@@ -73,7 +73,6 @@ main {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	/* max-width: 90%; */
 	margin-top: 1rem;
 }
 
@@ -88,8 +87,7 @@ main {
 	height: 3rem;
 	grid-row: 1;
 	grid-column: 1;
-	background-color: var(--violet);
-	background-image: url(./noun_turtle_1189418.svg);
+	background-image: url(./violet_noun_turtle_1189418.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -100,8 +98,7 @@ main {
 	height: 5rem;
 	grid-row: 2;
 	grid-column: 1;
-	background-color: var(--indigo);
-	background-image: url(./noun_turtle_1189418.svg);
+	background-image: url(./indigo_noun_turtle_1189418.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -112,8 +109,7 @@ main {
 	height: 5rem;
 	grid-row: 3;
 	grid-column: 1;
-	background-color: var(--blue);
-	background-image: url(./noun_turtle_1189418.svg);
+	background-image: url(./blue_noun_turtle_1189418.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -124,8 +120,7 @@ main {
 	height: 5rem;
 	grid-row: 4;
 	grid-column: 1;
-	background-color: var(--green);
-	background-image: url(./noun_turtle_1189418.svg);
+	background-image: url(./green_noun_turtle_1189418.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -136,8 +131,7 @@ main {
 	height: 5rem;
 	grid-row: 5;
 	grid-column: 1;
-	background-color: var(--yellow);
-	background-image: url(./noun_turtle_1189418.svg);
+	background-image: url(./yellow_noun_turtle_1189418.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -148,8 +142,7 @@ main {
 	height: 5rem;
 	grid-row: 6;
 	grid-column: 1;
-	background-color: var(--orange);
-	background-image: url(./noun_turtle_1189418.svg);
+	background-image: url(./orange_noun_turtle_1189418.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -160,8 +153,7 @@ main {
 	height: 5.5rem;
 	grid-row: 7;
 	grid-column: 1;
-	background-color: var(--red);
-	background-image: url(./noun_turtle_1189418.svg);
+	background-image: url(./red_noun_turtle_1189418.svg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -228,17 +220,17 @@ button:active {
 
 /** Media queries ############### */
 /** media greater >= 1440px  */
-@media all and (min-width: 1440px) {
-}
+/* @media all and (min-width: 1440px) {
+} */
 
 /** media less than 1000px  */
-@media all and (max-width: 999px) {
-}
+/* @media all and (max-width: 999px) {
+} */
 
 /** media less than 768px  */
-@media all and (max-width: 767px) {
-}
+/* @media all and (max-width: 767px) {
+} */
 
 /** media less than 600px  */
-@media all and (max-width: 599px) {
-}
+/* @media all and (max-width: 599px) {
+} */
