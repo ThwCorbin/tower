@@ -30,7 +30,7 @@ I developed a bronze/silver/gold plan, which is available in the planning direct
 
 ## Usage
 
-- cd to the tower directory
+- `cd` to the tower directory
 - open index.html in your browser(1)
 
 ## License
