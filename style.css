@@ -219,17 +219,60 @@ button:active {
 }
 
 /** Media queries ############### */
-/** media greater >= 1440px  */
-/* @media all and (min-width: 1440px) {
-} */
-
-/** media less than 1000px  */
-/* @media all and (max-width: 999px) {
-} */
-
 /** media less than 768px  */
-/* @media all and (max-width: 767px) {
-} */
+@media all and (max-width: 767px) {
+	.turtle-0 {
+		width: 3rem;
+		height: 2rem;
+	}
+
+	.turtle-1 {
+		width: 3.5rem;
+		height: 2.5rem;
+	}
+
+	.turtle-2 {
+		width: 4rem;
+		height: 2.5rem;
+	}
+
+	.turtle-3 {
+		width: 4.5rem;
+		height: 3rem;
+	}
+
+	.turtle-4 {
+		width: 5rem;
+		height: 3rem;
+	}
+
+	.turtle-5 {
+		width: 5.5rem;
+		height: 3rem;
+	}
+
+	.turtle-6 {
+		width: 6rem;
+		height: 3rem;
+	}
+
+	.board-base {
+		max-width: 18rem;
+	}
+
+	.base {
+		width: 6rem;
+		height: 2rem;
+	}
+
+	.directions {
+		margin-left: 1rem;
+	}
+
+	li {
+		font-size: 0.7rem;
+	}
+}
 
 /** media less than 600px  */
 /* @media all and (max-width: 599px) {
